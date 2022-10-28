@@ -59,6 +59,18 @@ const Right = styled.div`
     justify-content: flex-end;
     ${mobile({ flex: 2, justifyContent: "center" })}
 `
+const Link = styled.div`
+    font-size:15px;
+    cursor: pointer;
+    margin-left: 25px; 
+    transition: all 0.5s ease;
+    &:hover {
+    color: teal; 
+    transform: scale(1.1);
+    ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+    }
+`
+
 const MenuItem = styled.div`
     font-size:15px;
     cursor: pointer;
@@ -84,8 +96,8 @@ const Navbar = () => {
             </Left>
             <Center><Logo>Goods</Logo></Center>   
             <Right>
-                <MenuItem>REGISTER</MenuItem>
-                <MenuItem>SIGN IN</MenuItem>
+                <Link to = "/register">REGISTER</Link>
+                <Link to ="/signup">SIGN IN</Link>
                 <MenuItem>
                 <Badge badgeContent={4} color="primary">
                     <ShoppingCartOutlined />

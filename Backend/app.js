@@ -6,31 +6,23 @@ import { v4 as uuidv4 } from 'uuid'
 import { generateJwt } from "./jwt/webtoken.js"
 import { auth } from "./middleware/middle.js"
 import cors from "cors"
-import cookieParser from "cookie-parser"
-import session, { Cookie } from "express-session"
-import dotenv from "dotenv"
+import corsOptions from "../Backend/config/corsoptions.js"
 
-
-const pool = connectDatabase()
 const app = express()
+const pool = connectDatabase()
 const PORT = 8000
-const corOptions = { credentials: true, origin: process.env.URL || "*" }
 
 app.use(express.json())
-app.use(cors(corOptions))
-app.use(cookieParser())
+app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: true }))
 
-pool.connect((err) => {
-    if (err) {
-        console.log(err)
-    }
-    else {
-        app.listen(PORT, () => {
-            console.log(`Server has started on http://localhost:${PORT}`)
-        })
-    }
-})
+app.get("/", (req, res) => {
+    res.json({
+        status: "success",
+    });
+});
+
 
 app.post('/signup', async (req, res) => {
     try {
@@ -41,11 +33,13 @@ app.post('/signup', async (req, res) => {
             username,
             password
         } = req.body
-        const user = await pool.query(`SELECT * FROM public.accountcreate WHERE lastname = $1 and firstname = $2 and email = $3 and username = $4`, [lastname, firstname, email, username])
+        const newemail = await pool.query(`SELECT * FROM public.accountcreate WHERE email = $1`, [email])
+        const newuser = await pool.query(`SELECT * FROM public.accountcreate WHERE username = $1`, [username])
 
-        if (user.rows.length > 0) {
-            res.status(401).send("Username already exists. Please select a different username.")
+        if (newemail && newuser.rows.length > 0) {
+            res.status(401).send("Username or email already exists!. Please try again.")
         }
+
         const saltRound = 10;
         const salt = await bcrypt.genSalt(saltRound);
         const bcryptPassword = await bcrypt.hash(password, salt);
@@ -103,5 +97,16 @@ app.get('/verify', auth, async (req, res) => {
         res.status(500).send({
             msg: "Unauthenticated"
         });
+    }
+})
+
+pool.connect((err) => {
+    if (err) {
+        console.log(err)
+    }
+    else {
+        app.listen(PORT, () => {
+            console.log(`Server has started on http://localhost:${PORT}`)
+        })
     }
 })
