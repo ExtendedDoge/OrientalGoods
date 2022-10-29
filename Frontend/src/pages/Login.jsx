@@ -4,7 +4,7 @@ import AuthContext from '../context/AuthProvider.js'
 import Home from "./Home"
 
 import axios from '../api/axios';
-const LOGIN_URL = '/signup';
+const LOGIN_URL = '/login';
 
 const Container=styled.div`
     width: 100vw;
@@ -69,8 +69,8 @@ const Login = () => {
     const userRef = useRef();
     const errRef = useRef();
 
-    const [user, setUser] = useState('');
-    const [pwd, setPwd] = useState('');
+    const [username, setUser] = useState('');
+    const [password, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
@@ -80,27 +80,27 @@ const Login = () => {
 
     useEffect(() => {
         setErrMsg('');
-    },[user, pwd])
+    },[username, password])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         
         try {
             const response = await axios.post(LOGIN_URL, 
-                JSON.stringify({username:user, password:pwd}),
+                ({username, password}),
                 {
                     headers: { 'Content-Type': 'application/json'},
-                    withCredentials: true
+                    // withCredentials: true
                 }
             );
             console.log(JSON.stringify(response?.data))
             const accessToken = response?.data?.accessToken;
-            setAuth({user, pwd, accessToken})
+            setAuth({username, password, accessToken})
             setUser('');
             setPwd('');
             setSuccess(true);
         }catch(err){
-            if (!err?.response) {
+            if (err?.response) {
                 setErrMsg('No Server Response');
             } else if (err.response?.status === 400) {
                 setErrMsg('Missing Username or Password');
@@ -119,7 +119,7 @@ const Login = () => {
     <>
         {success ? (
             <section>
-               <Home/>
+               <Home />
             </section>
         ) : (
     <Container>
@@ -129,12 +129,12 @@ const Login = () => {
             <Form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
                 <Input 
-                type = "user"
+                type = "username"
                 id="username"
                 ref={userRef}
                 autoComplete="off"
                 onChange={(e) => setUser(e.target.value)}
-                value={user}
+                value={username}
                 required/>
 
                 <label htmlFor="password">Password:</label>
@@ -142,12 +142,12 @@ const Login = () => {
                 type="password"
                 id="password" 
                 onChange={(e) => setPwd(e.target.value)}
-                value={pwd}
+                value={password}
                 required/>
                 
                 <Button>LOGIN</Button>
                 <Link>FORGOT PASSWORD?</Link>
-                <Link to ="/register">CREATE A NEW ACCOUNT</Link>
+                <Link>CREATE A NEW ACCOUNT</Link>
             </Form> 
         </Wrapper>
     </Container>

@@ -36,7 +36,7 @@ app.post('/signup', async (req, res) => {
         const newemail = await pool.query(`SELECT * FROM public.accountcreate WHERE email = $1`, [email])
         const newuser = await pool.query(`SELECT * FROM public.accountcreate WHERE username = $1`, [username])
 
-        if (newemail && newuser.rows.length > 0) {
+        if (newemail.rows.length > 0 || newuser.rows.length) {
             res.status(401).send("Username or email already exists!. Please try again.")
         }
 

@@ -4,9 +4,14 @@ import Login from "./pages/Login";
 import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
+import {Routes, Route, Link} from 'react-router-dom'
 
 const App = () => {
-    return <Home/>
+   return (<><Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      </Routes></>)
+   
 };
 
 export default App;
