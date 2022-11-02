@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.post('/signup', async (req, res) => {
+app.post('/register', async (req, res) => {
     try {
         const {
             lastname,

@@ -32,7 +32,8 @@ const Form=styled.form`
     display: flex;
     flex-direction: column;
 `
-const Input=styled.input`
+const Input = styled.input`
+    font-size: 20px;
     flex:1; 
     min-width: 40%;
     margin: 10px 0px;
@@ -57,7 +58,8 @@ const Button=styled.button`
 const Link=styled.a`
     margin: 5px 0px;
     font-size: 20px;
-    text-decoration: underline;
+    text-decoration: none;
+    transition: all 0.5s ease;
     cursor: pointer;
     &:hover { 
     transform: scale(1.1);
@@ -87,7 +89,7 @@ const Login = () => {
         
         try {
             const response = await axios.post(LOGIN_URL, 
-                ({username, password}),
+                ({username: username, password: password}),
                 {
                     headers: { 'Content-Type': 'application/json'},
                     // withCredentials: true
@@ -111,8 +113,6 @@ const Login = () => {
             }
             errRef.current.focus();
         }
-
-   
     }
 
   return (
@@ -125,9 +125,9 @@ const Login = () => {
     <Container>
         <Wrapper>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <Title>SIGN IN</Title>
+            <Title>WELCOME TO ORIENTAL GOODS!</Title>
             <Form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
+                <label htmlFor="username" className="label-username">Username:</label>
                 <Input 
                 type = "username"
                 id="username"
@@ -137,8 +137,8 @@ const Login = () => {
                 value={username}
                 required/>
 
-                <label htmlFor="password">Password:</label>
-                <Input
+                <label htmlFor="password" className="label-password">Password:</label>
+                <Input 
                 type="password"
                 id="password" 
                 onChange={(e) => setPwd(e.target.value)}
@@ -147,7 +147,7 @@ const Login = () => {
                 
                 <Button>LOGIN</Button>
                 <Link>FORGOT PASSWORD?</Link>
-                <Link>CREATE A NEW ACCOUNT</Link>
+                <Link to = "/register">CREATE A NEW ACCOUNT</Link>
             </Form> 
         </Wrapper>
     </Container>

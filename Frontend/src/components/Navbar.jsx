@@ -4,6 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { mobile } from "../responsive";
 import { Link } from 'react-router-dom'
+import "../assets/css/styles.css"
 
 //styled components start
 const Container = styled.div`
@@ -60,18 +61,6 @@ const Right = styled.div`
     justify-content: flex-end;
     ${mobile({ flex: 2, justifyContent: "center" })}
 `
-const Links = styled.div`
-    font-size:15px;
-    cursor: pointer;
-    margin-left: 25px; 
-    transition: all 0.5s ease;
-    &:hover {
-    color: teal; 
-    transform: scale(1.1);
-    ${mobile({ fontSize: "12px", marginLeft: "10px" })}
-    }
-`
-
 const MenuItem = styled.div`
     font-size:15px;
     cursor: pointer;
@@ -95,10 +84,10 @@ const Navbar = () => {
                     <Search style={{color:"black", fontSize:20}}/>
                 </SearchContainer>
             </Left>
-            <Center><Logo>Goods</Logo></Center>   
+            <Center><Logo>Oriental-Goods.</Logo></Center>   
             <Right>
-                <Link to = "/signup"> REGISTER </Link>
-                <Link to ="/login"> SIGN IN </Link>
+                <Link to = "/register" className = "btn-register"> REGISTER </Link>
+                <Link to ="/login" className = "btn-signin"> SIGN IN </Link>
                 <MenuItem>
                 <Badge badgeContent={4} color="primary">
                     <ShoppingCartOutlined />
