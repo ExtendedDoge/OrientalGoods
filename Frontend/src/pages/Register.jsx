@@ -84,12 +84,12 @@ const Register = ({setAuth}) => {
 
         try {
             const body = {
-              lname: lastname,
-              fname: firstname,
-              email: email,
-              uname: username,
-              password: password,
-              confirm: confirm,
+            lastname: lastname,
+            firstname: firstname,
+            email: email,
+            username: username,
+            password: password,
+            confirm: confirm,
             };
             const response = await axios.post(register_url, JSON.stringify(body), {
               headers: {
@@ -124,9 +124,9 @@ const Register = ({setAuth}) => {
             <Title>CREATE YOUR ACCOUNT</Title>
             <Form onSubmit={onSubmitForm}>
                 <Input 
-                type="text"
+                name = "lastname"
+                type="lastname"
                 id="lastname"
-                name="lastname"
                 placeholder="Last Name"
                 value={lastname}
                 required
@@ -135,9 +135,9 @@ const Register = ({setAuth}) => {
                 }}/>
 
                 <Input
-                type = "text"
+                type = "firstname"
                 id="firstname"
-                name = "firstname" 
+                name = "firstname"
                 placeholder="First Name"
                 value={firstname}
                 required
@@ -157,10 +157,16 @@ const Register = ({setAuth}) => {
                   onChange(e);
                 }}/>
 
-
                 <Input
-                placeholder="Username"/>
-
+                name = "username" 
+                type="text"
+                value={username}
+                id="username"
+                placeholder="Username"
+                required
+                onChange={(e) => {
+                  onChange(e);
+                }}/>
 
                 <Input 
                 type="password"
