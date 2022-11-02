@@ -3,6 +3,8 @@ import { Search, ShoppingCartOutlined} from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
 import { mobile } from "../responsive";
+import { Link } from 'react-router-dom'
+import "../assets/css/styles.css"
 
 //styled components start
 const Container = styled.div`
@@ -82,10 +84,10 @@ const Navbar = () => {
                     <Search style={{color:"black", fontSize:20}}/>
                 </SearchContainer>
             </Left>
-            <Center><Logo>Goods</Logo></Center>   
+            <Center><Logo>Oriental-Goods.</Logo></Center>   
             <Right>
-                <MenuItem>REGISTER</MenuItem>
-                <MenuItem>SIGN IN</MenuItem>
+                <Link to = "/register" className = "btn-register"> REGISTER </Link>
+                <Link to ="/login" className = "btn-signin"> SIGN IN </Link>
                 <MenuItem>
                 <Badge badgeContent={4} color="primary">
                     <ShoppingCartOutlined />
