@@ -1,24 +1,27 @@
 import styled from "styled-components"
 import { useRef, useState, useEffect, useContext } from 'react'
 import AuthContext from '../context/AuthProvider.js'
+import { LoginBanner } from "../data.js"
 import Home from "./Home"
 
 import axios from '../api/axios';
 const LOGIN_URL = '/login';
 
 const Container=styled.div`
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),
-    url("https://images.pexels.com/photos/6243246/pexels-photo-6243246.jpeg") center;
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
 `
 
+const Image = styled.img`
+    width: 62vw;
+    height: 100vh;
+    object-fit: cover;
+`
+
 const Wrapper=styled.div`
-    width: 25%;
+    width: 40%;
     padding: 20px;
     background-color: transparent;
 `
@@ -38,32 +41,36 @@ const Input = styled.input`
     min-width: 40%;
     margin: 10px 0px;
     padding: 8px;
+    font-family: Verdana;
+    letter-spacing: 0.125em;
 `
 
 const Button=styled.button`
+    font-weight: 600;
     width: 25%;
     border: none;
     padding: 15px 20px;
     background-color: teal;
     color: white;
-    font-size: 15px;
-    font-weight:500;
+    font-size: 20px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.5s ease;
     &:hover {
+    transform: scale(1.1);
     background-color: #c08ab7; 
   }
 `
 
 const Link=styled.a`
-    margin: 5px 0px;
+    margin-top: 20px;
     font-size: 20px;
     text-decoration: none;
-    transition: all 0.5s ease;
     cursor: pointer;
-    &:hover { 
-    transform: scale(1.1);
-  }
+    &:hover {
+    color: teal; 
+    font-weight: 700;
+    }
 `
 
 const Login = () => {
@@ -123,6 +130,9 @@ const Login = () => {
             </section>
         ) : (
     <Container>
+            {LoginBanner.map(item=>(
+            <Image src={item.img}/>
+        ))}
         <Wrapper>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <Title>WELCOME TO ORIENTAL GOODS!</Title>
@@ -145,7 +155,7 @@ const Login = () => {
                 value={password}
                 required/>
                 
-                <Button>LOGIN</Button>
+                <Button className="btn-actual-login">LOGIN</Button>
                 <Link>FORGOT PASSWORD?</Link>
                 <Link to = "/register">CREATE A NEW ACCOUNT</Link>
             </Form> 

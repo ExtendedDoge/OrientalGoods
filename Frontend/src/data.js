@@ -74,3 +74,52 @@ export const popularProducts = [
         img: "product8.jpg",
     },
 ]
+
+export const LoginBanner = [
+    {
+        id: 1,
+        img: "loginbanner.jpg",
+    }
+]
+
+export const RegisterBanner = [
+    {
+        id: 1,
+        img: "registerbanner.jpg",
+    }
+]
+
+export const DelicacyTreats = [
+    {
+        id: 1,
+        img: "budbuds.jpg",
+    },
+    {
+        id: 2,
+        img: "dried.jpg",
+    },
+    {
+        id: 3,
+        img: "bananass.jpg",
+    },
+    {
+        id: 4,
+        img: "kape.jpg",
+    },
+    {
+        id: 5,
+        img: "hopia.jpg",
+    },
+    {
+        id: 6,
+        img: "item55.jpg",
+    },
+    {
+        id: 7,
+        img: "product7.jpg",
+    },
+    {
+        id: 8,
+        img: "otap.jpg",
+    },
+]

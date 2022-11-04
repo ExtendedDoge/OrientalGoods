@@ -27,14 +27,14 @@
 }    
 
 .btn-registerpage-login{
-    margin-left: 15px;
+    margin-left: 25px;
     width: 25%;
     border: none;
     text-align: center;
-    padding: 15px 20px;
+    padding: 5px 20px;
     background-color: teal;
     color: white;
-    font-size: 15px;
+    font-size: 18px;
     font-weight:500;
     cursor: pointer;
     text-decoration: none;
@@ -44,14 +44,15 @@
 .btn-registerpage-login:hover{
     background-color: #c08ab7; 
     transform: scale(1.1);
+
 }
 
 .label-username{
     margin-top: 15px;
-    font-size: 22px;
+    font-size: 25px;
 }
 
 .label-password{
     margin-top: 15px;
-    font-size: 22px;
+    font-size: 25px;
 }

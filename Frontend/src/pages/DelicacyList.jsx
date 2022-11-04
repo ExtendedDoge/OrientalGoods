@@ -1,19 +1,15 @@
 import styled from 'styled-components'
 import Navbar from "../components/Navbar"
 import Announcement from "../components/Announcement"
-import Products from "../components/Products"
 import Newsletter from "../components/Newsletter"
 import Footer from "../components/Footer"
+import DelicacyCategory from "../components/DelicacyCategory"
 
 const Container = styled.div``
-
-
 
 const Title = styled.h1`
     margin: 20px;
 `
-
-
 
 const FilterContainer = styled.div`
     display: flex;
@@ -39,34 +35,13 @@ const Select = styled.select`
 
 const Option = styled.option``
 
-const ProductList = () => {
+const DelicacyList = () => {
   return (
     <Container>
         <Announcement/>
         <Navbar/>
         <Title>Pasalubong for Everyone</Title>
         <FilterContainer>
-             <Filter>
-                <FilterText style={{marginRight:"15px"}}>Filter products by:</FilterText>
-             <Select>
-                <Option disabled selected>Color</Option>
-                <Option>White</Option>
-                <Option>Black</Option>
-                <Option>Red</Option>
-                <Option>Blue</Option>
-                <Option>Yello</Option>
-                <Option>Green</Option>
-             </Select>
-             <Select>
-                <Option disabled selected>Size</Option>
-                <Option>XS</Option>
-                <Option>S</Option>
-                <Option>M</Option>
-                <Option>L</Option>
-                <Option>XL</Option>
-                <Option>XXL</Option>
-             </Select>
-             </Filter>
              <Filter><FilterText style={{marginRight:"15px"}}>Sort products by:</FilterText>
                 <Select>
                     <Option selected>Newest</Option>
@@ -75,7 +50,7 @@ const ProductList = () => {
                 </Select>
              </Filter>
         </FilterContainer>
-        <Products/>
+        <DelicacyCategory/>
         <Newsletter/>
         <Footer/>
     </Container>
@@ -83,4 +58,4 @@ const ProductList = () => {
 }
 
 
-export default ProductList
+export default DelicacyList
