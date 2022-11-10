@@ -24,7 +24,9 @@ const Left = styled.div`
     align-items: center;
 `
 const Language = styled.span`
-    font-size: 14px;
+color: teal;
+font-weight: 600;
+    font-size: 16px;
     cursor: pointer;
     ${mobile({ display: "none" })}
 `;
@@ -36,6 +38,8 @@ const SearchContainer = styled.div`
     padding: 5px;
 `
 const Input = styled.input`
+font-weight: 600;
+    font-size: 16px;
     border: none;
     ${mobile({ width: "50px" })}
 `;
@@ -46,7 +50,6 @@ const Logo = styled.h1`
     cursor: pointer;
     transition: all 0.5s ease;
     &:hover {
-    color: black; 
     transform: scale(1.2);
     }
 `
@@ -80,8 +83,8 @@ const Navbar = () => {
             <Left>
                 <Language>EN</Language>
                 <SearchContainer>
-                    <Input placeholder="Search"/>
-                    <Search style={{color:"black", fontSize:20}}/>
+                    <Input placeholder="Search" style={{color:"teal"}}/>
+                    <Search style={{color:"black"}}/>
                 </SearchContainer>
             </Left>
             <Center><Logo>Oriental-Goods.</Logo></Center>   

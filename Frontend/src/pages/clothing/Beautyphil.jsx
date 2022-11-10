@@ -1,12 +1,13 @@
 import { Add, Remove } from "@material-ui/icons"
 import styled from "styled-components"
-import Announcement from "../components/Announcement"
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
-import Newsletter from "../components/Newsletter"
-
+import Announcement from "../../components/Announcement"
+import Footer from "../../components/Footer"
+import Navbar from "../../components/Navbar"
+import Newsletter from "../../components/Newsletter"
+import { ClothingTest4 } from "../../data.js"
 
 const Container = styled.div``
+
 const Wrapper = styled.div`
     padding: 50px;
     display: flex;
@@ -18,8 +19,8 @@ const Image= styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
-
 `
+
 const InfoContainer = styled.div`
    flex: 1;
    padding: 0px 50px;
@@ -28,11 +29,13 @@ const Title = styled.h1`
   font-weight: 500;
 `
 const Desc = styled.p`
-  margin: 20px 0px;
+  font-size: 21px;
+  margin: 19px 0px;
+
 `
 const Price = styled.span`
-  font-weight: 100;
-  font-size: 40px;
+  font-weight: 200;
+  font-size: 50px;
 `
 
 const FilterContainer = styled.div`
@@ -66,7 +69,9 @@ const FilterSize = styled.select`
   font-weight: 400;
 `
 
-const FilterSizeOption = styled.option``
+const FilterSizeOption = styled.option`
+  font-size: 17px;
+`
 
 const AddContainer = styled.div`
   width: 50%;
@@ -107,27 +112,36 @@ const Button = styled.button`
   }
 `
 
+const Manufacturer = styled.h1`
+  text-indent: 5px;
+  margin-top: 10px;
+  font-size: 20px;
+`
 
-
-const Product = () => {
+const Beautyphil = () => {
   return (
     <Container>
       <Announcement/>
       <Navbar/>
       <Wrapper>
         <ImgContainer>
-        <Image src="https://images.pexels.com/photos/2363825/pexels-photo-2363825.jpeg"/>
+        {ClothingTest4.map(item=>(
+            <Image src={item.img}/>
+        ))}
         </ImgContainer>
         <InfoContainer>
-            <Title>Denim Pants</Title>
+            <Title>Beauty of the Philippines T-Shirt</Title>
+            <Manufacturer>By: Island Boys</Manufacturer>
             <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consequatur quos minus amet pariatur suscipit quae possimus nam, sed deserunt ex reprehenderit, labore tempore laborum. Architecto repudiandae maiores optio ducimus?</Desc>
-            <Price>$20</Price>
+            <Price>Php 250.00</Price>
             <FilterContainer>
               <Filter>
                 <FilterTitle style={{marginRight:"5px"}}>Color:</FilterTitle>
                 <FilterColor color="black"/>
                 <FilterColor color="darkblue"/>
+                <FilterColor color="purple"/>
                 <FilterColor color="gray"/>
+                <FilterColor color="red" style={{marginRight:"50px"}}/>
               </Filter>
               <Filter>
                 <FilterTitle style={{marginRight:"10px"}}>Size:</FilterTitle>
@@ -157,4 +171,4 @@ const Product = () => {
   )
 }
 
-export default Product
+export default Beautyphil
