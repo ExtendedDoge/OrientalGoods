@@ -17,6 +17,8 @@ const Logo = styled.h1``
 
 
 const Desc = styled.p`
+text-indent: 10%;
+    font-size: 18px;
     margin: 20px 0px;
 `
 
@@ -45,7 +47,8 @@ const Center = styled.div`
 
 const Title = styled.h3`
     margin-bottom: 30px;
-    font-size: 23px;
+    font-size: 25px;
+    font-weight: 650;
 `
 
 const List = styled.ul`
@@ -56,6 +59,7 @@ const List = styled.ul`
 `
 
 const ListItem = styled.li`
+font-size: 18px;
     width: 50%;
     margin-bottom: 10px;
     cursor: pointer;
@@ -67,6 +71,7 @@ const Right = styled.div`
 `
 
 const ContactItem = styled.div`
+    font-size: 18px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -80,9 +85,9 @@ const Footer = () => {
   return (
     <Container>
     <Left>
-        <Logo>ORIENTAL-GOODS.</Logo>
+        <Logo>Oriental-Goods.</Logo>
         <Desc>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis tenetur perferendis eum. Est odit itaque suscipit nihil quos adipisci quisquam iure! Tempora minima porro itaque, corrupti possimus nobis quis eius?
+        We at Oriental-Goods provide high-quality handmade products with artistic style. Also, we make sure our delicacies are scrumptious and at the same, affordable. We want our customers to have a complete and delightful experience by checking our products. 
         </Desc>
         <SocialContainer>
             <SocialIcon color = "3B5998">

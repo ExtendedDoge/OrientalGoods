@@ -4,7 +4,7 @@ import Announcement from "../../components/Announcement"
 import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
 import Newsletter from "../../components/Newsletter"
-import { ClothingTest } from "../../data.js"
+import { ClothingTest6 } from "../../data.js"
 
 const Container = styled.div``
 
@@ -70,7 +70,7 @@ const FilterSize = styled.select`
 `
 
 const FilterSizeOption = styled.option`
-    font-size: 17px;
+  font-size: 17px;
 `
 
 const AddContainer = styled.div`
@@ -99,7 +99,7 @@ const Amount = styled.span`
 
 
 const Button = styled.button`
-font-size: 17px;
+  font-size: 17px;
   padding: 15px;
   border: 2px solid teal;
   background-color: white;
@@ -119,27 +119,27 @@ const Manufacturer = styled.h1`
   font-size: 20px;
 `
 
-const Tiedyeshirt = () => {
+const Tiedyeshorts = () => {
   return (
     <Container>
       <Announcement/>
       <Navbar/>
       <Wrapper>
         <ImgContainer>
-        {ClothingTest.map(item=>(
+        {ClothingTest6.map(item=>(
             <Image src={item.img}/>
         ))}
         </ImgContainer>
         <InfoContainer>
-            <Title>Tie Dye Shirt</Title>
+            <Title>Tie Dye Summer Shorts</Title>
             <Manufacturer>By: Island Boys</Manufacturer>
             <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consequatur quos minus amet pariatur suscipit quae possimus nam, sed deserunt ex reprehenderit, labore tempore laborum. Architecto repudiandae maiores optio ducimus?</Desc>
-            <Price>Php 250.00</Price>
+            <Price>Php 150.00</Price>
             <FilterContainer>
               <Filter>
                 <FilterTitle style={{marginRight:"5px"}}>Color:</FilterTitle>
-                <FilterColor color="black"/>
-                <FilterColor color="darkblue"/>
+                <FilterColor color="yellow"/>
+                <FilterColor color="lightblue"/>
                 <FilterColor color="purple"/>
                 <FilterColor color="gray"/>
                 <FilterColor color="red" style={{marginRight:"50px"}}/>
@@ -172,4 +172,4 @@ const Tiedyeshirt = () => {
   )
 }
 
-export default Tiedyeshirt
+export default Tiedyeshorts

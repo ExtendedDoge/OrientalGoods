@@ -99,10 +99,11 @@ const Amount = styled.span`
 
 
 const Button = styled.button`
+font-size: 17px;
   padding: 15px;
   border: 2px solid teal;
   background-color: white;
-  font-weight: 500;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.5s ease;
   &:hover {
@@ -157,9 +158,9 @@ const Ilovedumashirt = () => {
             </FilterContainer>
             <AddContainer> 
               <AmountContainer>
-                <Remove/>
-                <Amount>0</Amount>
-                <Add/>
+                <Remove style = {{fontSize:"30px"}}/>
+                <Amount style = {{fontSize:"25px"}}>0</Amount>
+                <Add style = {{fontSize:"30px"}}/>
               </AmountContainer>
               <Button>ADD TO CART</Button>
             </AddContainer>

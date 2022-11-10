@@ -7,6 +7,10 @@ import Embroideredpants from './pages/clothing/Embroideredpants'
 import Iloveduma from "./pages/clothing/Ilovedumashirt"
 import Beautyphil from "./pages/clothing/Beautyphil"
 import Tiedyepantsred from "./pages/clothing/Tiedyepantsred"
+import Tiedyeshorts from "./pages/clothing/Tiedyeshorts"
+import Filipinoshirt from "./pages/clothing/Filipinoshirt"
+import Budbudfood from "./pages/foods/Budbudfood"
+import Mangofood from "./pages/foods/Mangofood"
 import ClothingList from "./pages/ClothingList";
 import DelicacyList from "./pages/DelicacyList"
 import Register from "./pages/Register";
@@ -26,7 +30,7 @@ import {Routes, Route, Link} from 'react-router-dom'
 // };
 
 const App = () => {
-   return <Tiedyepantsred />;
+   return <Mangofood />;
  };
 
 export default App;

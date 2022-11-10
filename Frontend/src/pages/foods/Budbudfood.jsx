@@ -4,7 +4,7 @@ import Announcement from "../../components/Announcement"
 import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
 import Newsletter from "../../components/Newsletter"
-import { ClothingTest } from "../../data.js"
+import { DelicacyTreats1 } from "../../data.js"
 
 const Container = styled.div``
 
@@ -70,17 +70,12 @@ const FilterSize = styled.select`
 `
 
 const FilterSizeOption = styled.option`
-    font-size: 17px;
-`
-
-const AddContainer = styled.div`
-  width: 50%;
-  display: flex;
-  align-items: center;   
-  justify-content: space-between;
+  font-size: 18px;
 `
 
 const AmountContainer = styled.div`
+  margin-left: 70px;
+  margin-right: 15px;
   display: flex;
   align-items: center;
   font-weight: 600;
@@ -97,9 +92,9 @@ const Amount = styled.span`
   margin: 0px 5px;
 `
 
-
 const Button = styled.button`
-font-size: 17px;
+  width: 150px;
+  font-size: 17px;
   padding: 15px;
   border: 2px solid teal;
   background-color: white;
@@ -119,51 +114,43 @@ const Manufacturer = styled.h1`
   font-size: 20px;
 `
 
-const Tiedyeshirt = () => {
+const Budbudfood = () => {
   return (
     <Container>
       <Announcement/>
       <Navbar/>
       <Wrapper>
         <ImgContainer>
-        {ClothingTest.map(item=>(
+        {DelicacyTreats1.map(item=>(
             <Image src={item.img}/>
         ))}
         </ImgContainer>
         <InfoContainer>
-            <Title>Tie Dye Shirt</Title>
-            <Manufacturer>By: Island Boys</Manufacturer>
-            <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consequatur quos minus amet pariatur suscipit quae possimus nam, sed deserunt ex reprehenderit, labore tempore laborum. Architecto repudiandae maiores optio ducimus?</Desc>
-            <Price>Php 250.00</Price>
+            <Title>8pc Assorted Budbud (Rice Cake)</Title>
+            <Manufacturer>By: Chef Ravin Opana</Manufacturer>
+            <Desc>Sticky Rice Cake wrapped in Banana Leaves. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consequatur quos minus amet pariatur suscipit quae possimus nam, sed deserunt ex reprehenderit, labore tempore laborum. Architecto repudiandae maiores optio ducimus?</Desc>
+            <Price>Php 200.00</Price>
             <FilterContainer>
               <Filter>
-                <FilterTitle style={{marginRight:"5px"}}>Color:</FilterTitle>
-                <FilterColor color="black"/>
-                <FilterColor color="darkblue"/>
-                <FilterColor color="purple"/>
-                <FilterColor color="gray"/>
-                <FilterColor color="red" style={{marginRight:"50px"}}/>
-              </Filter>
-              <Filter>
-                <FilterTitle style={{marginRight:"10px"}}>Size:</FilterTitle>
+              <FilterTitle style={{marginRight:"9px"}}>Size:</FilterTitle>
                 <FilterSize>
-                  <FilterSizeOption>XS</FilterSizeOption>
-                  <FilterSizeOption>S</FilterSizeOption>
-                  <FilterSizeOption>M</FilterSizeOption>
-                  <FilterSizeOption>L</FilterSizeOption>
-                  <FilterSizeOption>XL</FilterSizeOption>
-                  <FilterSizeOption>XXL</FilterSizeOption>
+                  <FilterSizeOption>1 BOX</FilterSizeOption>
+                  <FilterSizeOption>2 BOXES</FilterSizeOption>
+                  <FilterSizeOption>3 BOXES</FilterSizeOption>
+                  <FilterSizeOption>4 BOXES</FilterSizeOption>
+                  <FilterSizeOption>5 BOXES</FilterSizeOption>
+                  <FilterSizeOption>6 BOXES</FilterSizeOption>
                 </FilterSize>
               </Filter>
-            </FilterContainer>
-            <AddContainer> 
+              <Filter>
               <AmountContainer>
-                <Remove style = {{fontSize:"30px"}}/>
+                <Remove style = {{fontSize:"30px",cursor:"pointer"}}/>
                 <Amount style = {{fontSize:"25px"}}>0</Amount>
-                <Add style = {{fontSize:"30px"}}/>
+                <Add style = {{fontSize:"30px",cursor:"pointer"}}/>
               </AmountContainer>
               <Button>ADD TO CART</Button>
-            </AddContainer>
+              </Filter>
+            </FilterContainer>
         </InfoContainer>
       </Wrapper>
       <Newsletter/>
@@ -172,4 +159,4 @@ const Tiedyeshirt = () => {
   )
 }
 
-export default Tiedyeshirt
+export default Budbudfood

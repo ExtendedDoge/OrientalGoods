@@ -245,3 +245,33 @@ export const ClothingTest5 = [
         img: "Tiedyepantsred.jpg",
     },
 ]
+
+export const ClothingTest6 = [
+    {
+        id: 1,
+        img: "Tiedyeshorts.jpg",
+    },
+]
+
+export const ClothingTest7 = [
+    {
+        id: 1,
+        img: "filshirt.jpg",
+    },
+]
+
+//individual items for delicacy
+export const DelicacyTreats1 = [
+    {
+        id: 1,
+        img: "budbuds.jpg",
+    },
+]
+
+export const DelicacyTreats2 = [
+    {
+        id: 1,
+        img: "driedmango.jpg",
+    },
+]
+
