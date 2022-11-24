@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link } from "react-router-dom"
 import axios from '../api/axios';
 import { RegisterBanner } from "../data";
+import "../assets/css/styles.css"
 
 const register_url = '/register';
 
@@ -28,6 +29,12 @@ const Title=styled.h1`
     font-size: 35px;
     margin-bottom: 10px;
     font-weight: 800;
+    text-align: center;
+    &:hover {
+        cursor: pointer;
+        color: teal;
+        transition: 0.25s ease;
+    }
 `
 const Form=styled.form`
     display: flex;
@@ -59,11 +66,11 @@ const Button=styled.button`
     padding: 15px 20px;
     background-color: teal;
     color: white;
-    font-weight:500;
+    font-weight:600;
     cursor: pointer;
     transition: all 0.5s ease;
     &:hover {
-    background-color: #c08ab7; 
+    background-color: #420c39; 
     transform: scale(1.1);
   }
 `
@@ -77,7 +84,6 @@ const Register = ({setAuth}) => {
         password: "",
         confirm: "",
       });
-    const [success] = useState(false);
     const { lastname, firstname, email, username, password, confirm  } = inputs; 
 
     const onChange = (e) => {
@@ -118,12 +124,12 @@ const Register = ({setAuth}) => {
           };
 
   return (
-    <>  {success ? (
-            <section>
-               <h1>YOU HAVE SUCCESSFULLY CREATED YOUR ACCOUNT</h1>
-               <Link to = "/login">GO back to Login Screen </Link>
-            </section>
-        ) : (
+    // <>  {success ? (
+    //         <section>
+    //            <h1>YOU HAVE SUCCESSFULLY CREATED YOUR ACCOUNT</h1>
+    //            <Link to = "/login">GO back to Login Screen </Link>
+    //         </section>
+    //     ) : (
     <Container>
             {RegisterBanner.map(item=>(
             <Image src={item.img}/>
@@ -201,7 +207,7 @@ const Register = ({setAuth}) => {
                 <Agreement>
                     By creating an account here at Oriental Goods, 
                     I consent to the processing of my personal
-                    data in accordance with the <b>PRIVACY POLICY.</b>
+                    data in accordance with the <b className="privacyPol">PRIVACY POLICY.</b>
                 </Agreement>
                 <Button>CREATE</Button>
                 <Link to="/login" className="btn-registerpage-login">Go to Login Page</Link>
@@ -209,8 +215,8 @@ const Register = ({setAuth}) => {
         </Wrapper>
     </Container>
           )}
-    </>
-  )
-}
+    // </>
+  // )
+// }
 
 export default Register

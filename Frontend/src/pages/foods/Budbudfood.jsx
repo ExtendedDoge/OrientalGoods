@@ -69,13 +69,8 @@ const FilterSize = styled.select`
   font-weight: 400;
 `
 
-const FilterSizeOption = styled.option`
-  font-size: 18px;
-`
-
 const AmountContainer = styled.div`
-  margin-left: 70px;
-  margin-right: 15px;
+  margin-right: 30px;
   display: flex;
   align-items: center;
   font-weight: 600;
@@ -131,17 +126,6 @@ const Budbudfood = () => {
             <Desc>Sticky Rice Cake wrapped in Banana Leaves. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consequatur quos minus amet pariatur suscipit quae possimus nam, sed deserunt ex reprehenderit, labore tempore laborum. Architecto repudiandae maiores optio ducimus?</Desc>
             <Price>Php 200.00</Price>
             <FilterContainer>
-              <Filter>
-              <FilterTitle style={{marginRight:"9px"}}>Size:</FilterTitle>
-                <FilterSize>
-                  <FilterSizeOption>1 BOX</FilterSizeOption>
-                  <FilterSizeOption>2 BOXES</FilterSizeOption>
-                  <FilterSizeOption>3 BOXES</FilterSizeOption>
-                  <FilterSizeOption>4 BOXES</FilterSizeOption>
-                  <FilterSizeOption>5 BOXES</FilterSizeOption>
-                  <FilterSizeOption>6 BOXES</FilterSizeOption>
-                </FilterSize>
-              </Filter>
               <Filter>
               <AmountContainer>
                 <Remove style = {{fontSize:"30px",cursor:"pointer"}}/>

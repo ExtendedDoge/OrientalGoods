@@ -28,12 +28,12 @@ export const categories = [
     {
         id: 1,
         img: "testdeli.jpg",
-        title: "SWEETS AND TREATS",
+        title: "DELICACIES",
     },
     {
         id: 2,
         img: "filshirt.jpg",
-        title: "CLOTHING ATBP.",
+        title: "APPAREL",
     },
     {
         id: 3,
@@ -91,6 +91,13 @@ export const RegisterBanner = [
     {
         id: 1,
         img: "registerbanner.jpg",
+    }
+]
+
+export const PaymentBanner = [
+    {
+        id: 1,
+        img: "paymentbanner.png"
     }
 ]
 
@@ -275,3 +282,11 @@ export const DelicacyTreats2 = [
     },
 ]
 
+
+//for decoration design
+export const Decoration1 = [
+    {
+        id: 1,
+        img: "assortedpins.jpg",
+    },
+]

@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Twitter, Pinterest, Room, Phone, MailOutline } from "@material-ui/icons"
 import styled from "styled-components"
+import { PaymentBanner } from "../data"
 
 const Container = styled.div`
     display: flex;
@@ -78,7 +79,7 @@ const ContactItem = styled.div`
 `
 
 const Payment = styled.img`
-    width: 60%;
+    width: 65%;
 `
 
 const Footer = () => {
@@ -87,7 +88,7 @@ const Footer = () => {
     <Left>
         <Logo>Oriental-Goods.</Logo>
         <Desc>
-        We at Oriental-Goods provide high-quality handmade products with artistic style. Also, we make sure our delicacies are scrumptious and at the same, affordable. We want our customers to have a complete and delightful experience by checking our products. 
+        We at Oriental-Goods provide high-quality handmade products with artistic style. Also, we make sure our delicacies are scrumptious and at the same, affordable. We want our customers to have a complete and delightful experience just by checking our products. 
         </Desc>
         <SocialContainer>
             <SocialIcon color = "3B5998">
@@ -130,7 +131,9 @@ const Footer = () => {
         <ContactItem><MailOutline style={{marginRight:"10px"}}/>
             contact-oriental.goods@gmail.com
         </ContactItem> 
-        <Payment src= "https://i.ibb.co/Qfvn4z6/payment.png"/>
+        {PaymentBanner.map(item=>(
+            <Payment src={item.img}/>
+        ))}
     </Right>        
     </Container>
   )

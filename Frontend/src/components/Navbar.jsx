@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { mobile } from "../responsive";
 import { Link } from 'react-router-dom'
 import "../assets/css/styles.css"
+import {NavDropdown} from "react-bootstrap"
 
 //styled components start
 const Container = styled.div`
@@ -53,9 +54,11 @@ const Logo = styled.h1`
     transform: scale(1.2);
     }
 `
-const Center = styled.div`
+const Center = styled.button`
     flex: 1;
     text-align: center;
+    border: none;
+    background-color: transparent;
 `
 const Right = styled.div`
     flex: 1;
@@ -75,7 +78,6 @@ const MenuItem = styled.div`
     ${mobile({ fontSize: "12px", marginLeft: "10px" })}
     }
 `
-
 const Navbar = () => {
   return (
     <Container>
@@ -89,8 +91,9 @@ const Navbar = () => {
             </Left>
             <Center><Logo>Oriental-Goods.</Logo></Center>   
             <Right>
-                <Link to = "/register" className = "btn-register"> REGISTER </Link>
-                <Link to ="/login" className = "btn-signin"> SIGN IN </Link>
+                <Link to = "/register" className = "btn-register">REGISTER</Link>
+                <Link to ="/login" className = "btn-signin">LOG-IN</Link>
+                <Link to = "/profile" className= "btn-dashboard">ACCOUNT</Link>
                 <MenuItem>
                 <Badge badgeContent={4} color="primary">
                     <ShoppingCartOutlined />
@@ -98,7 +101,7 @@ const Navbar = () => {
                 </MenuItem>
             </Right>
         </Wrapper>
-    </Container>
+    </Container> 
   )
 }
 

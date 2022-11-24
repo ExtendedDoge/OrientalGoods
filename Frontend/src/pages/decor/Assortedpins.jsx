@@ -4,7 +4,7 @@ import Announcement from "../../components/Announcement"
 import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
 import Newsletter from "../../components/Newsletter"
-import { DelicacyTreats2 } from "../../data.js"
+import { Decoration1 } from "../../data.js"
 
 const Container = styled.div``
 
@@ -49,7 +49,6 @@ const Filter = styled.div`
   display: flex;
   align-items: center;
 `
-
 const AmountContainer = styled.div`
   margin-right: 30px;
   display: flex;
@@ -90,28 +89,28 @@ const Manufacturer = styled.h1`
   font-size: 20px;
 `
 
-const Mangofood = () => {
+const Assortedpins = () => {
   return (
     <Container>
       <Announcement/>
       <Navbar/>
       <Wrapper>
         <ImgContainer>
-        {DelicacyTreats2.map(item=>(
+        {Decoration1.map(item=>(
             <Image src={item.img}/>
         ))}
         </ImgContainer>
         <InfoContainer>
-            <Title>Joanna Philippine Dried Mangoes</Title>
-            <Manufacturer>By: Joannas Foods Negros Oriental</Manufacturer>
-            <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consequatur quos minus amet pariatur suscipit quae possimus nam, sed deserunt ex reprehenderit, labore tempore laborum. Architecto repudiandae maiores optio ducimus?</Desc>
+            <Title>12pc Assorted Pinoy Pins (Rice Cake)</Title>
+            <Manufacturer>By: Design Labs</Manufacturer>
+            <Desc>1 Box of 12pc assorted, handmade pins. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi consequatur quos minus amet pariatur suscipit quae possimus nam, sed deserunt ex reprehenderit, labore tempore laborum. Architecto repudiandae maiores optio ducimus?</Desc>
             <Price>Php 100.00</Price>
             <FilterContainer>
               <Filter>
               <AmountContainer>
-                <Remove style = {{fontSize:"30px"}}/>
+                <Remove style = {{fontSize:"30px",cursor:"pointer"}}/>
                 <Amount style = {{fontSize:"25px"}}>0</Amount>
-                <Add style = {{fontSize:"30px"}}/>
+                <Add style = {{fontSize:"30px",cursor:"pointer"}}/>
               </AmountContainer>
               <Button>ADD TO CART</Button>
               </Filter>
@@ -124,4 +123,4 @@ const Mangofood = () => {
   )
 }
 
-export default Mangofood
+export default Assortedpins

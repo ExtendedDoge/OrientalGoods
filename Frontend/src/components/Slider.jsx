@@ -70,6 +70,7 @@ const Button = styled.button`
     padding: 12px;
     font-size: 22px;
     background-color: transparent;
+    transition: all 0.5s ease;
     border: 4px solid;
     cursor: pointer;
     &:hover {
