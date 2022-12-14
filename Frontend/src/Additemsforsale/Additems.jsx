@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Navbar from "../components/Navbar"
 import Announcement from "../components/Announcement"
@@ -71,9 +71,9 @@ const Img = styled.image`
 //end styled components section
 
 //API URL backend
-const NEW_ITEMS_FOR_SALE = "/itemsforsale";
+const NEW_ITEMS_FOR_SALE = "/user/itemsforsale";
 
-const AddItems = ({ setAuth }) => {
+const AddItems = () => {
   const [productname, setProductname] = useState("");
   const [manufacturer, setManufacturer] = useState("");
   const [description, setDescription] = useState("");
@@ -86,12 +86,12 @@ const AddItems = ({ setAuth }) => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("Productname", productname);
-    formData.append("Manufacturer", manufacturer);
-    formData.append("Description", description);
-    formData.append("Price", price);
-    formData.append("Size", size);
-    formData.append("Color", color);
+    formData.append("productname", productname);
+    formData.append("manufacturer", manufacturer);
+    formData.append("description", description);
+    formData.append("price", price);
+    formData.append("size", size);
+    formData.append("color", color);
 
     for (let image = 0; image < files.length; image++) {
       formData.append("file", files[image]);
@@ -106,9 +106,7 @@ const AddItems = ({ setAuth }) => {
       });
 
       if (response.status === 200 && response.status === "OK") {
-        // console.log("Item has been added Successfully!");
-        alert("An item has been added successfully!");
-        window.location.reload();
+        e.target.reset();
       }
       <Navigate to="/profile" />;
     } catch (error) {
@@ -121,7 +119,9 @@ const AddItems = ({ setAuth }) => {
       <Navbar />
       <Welcome> SELLER SECTION </Welcome>
       <Desc>Got any items to sell? Sell it now!</Desc>
-      <Form onSubmit={onSubmitForm} encType="multipart/form-data">
+      <Form onSubmit={(e)=>{
+        onSubmitForm(e);
+      }} encType="multipart/form-data">
         <Label htmlFor="Productname">Product Name:</Label>
         <Textarea
           id="productname"
@@ -129,8 +129,8 @@ const AddItems = ({ setAuth }) => {
           type="text"
           required
           autoFocus
-          onChange={(event) => {
-            const { value } = event.target;
+          onChange={(e) => {
+            const { value } = e.target;
             setProductname(value);
           }}></Textarea>
 
@@ -141,8 +141,8 @@ const AddItems = ({ setAuth }) => {
           type="text"
           required
           autoFocus
-          onChange={(event) => {
-            const { value } = event.target;
+          onChange={(e) => {
+            const { value } = e.target;
             setManufacturer(value);
           }}></Textarea>
 
@@ -155,8 +155,8 @@ const AddItems = ({ setAuth }) => {
           cols="25"
           required
           autoFocus
-          onChange={(event) => {
-            const { value } = event.target;
+          onChange={(e) => {
+            const { value } = e.target;
             setDescription(value);
           }}></Textarea>
 
@@ -167,8 +167,8 @@ const AddItems = ({ setAuth }) => {
           name="price"
           required
           autoFocus
-          onChange={(event) => {
-            const { value } = event.target;
+          onChange={(e) => {
+            const { value } = e.target;
             setPrice(value);
           }}></Textarea>
 
@@ -179,8 +179,8 @@ const AddItems = ({ setAuth }) => {
           name="color"
           required
           autoFocus
-          onChange={(event) => {
-            const { value } = event.target;
+          onChange={(e) => {
+            const { value } = e.target;
             setColor(value);
           }}></Textarea>
 
@@ -191,8 +191,8 @@ const AddItems = ({ setAuth }) => {
           type="text"
           required
           autoFocus
-          onChange={(event) => {
-            const { value } = event.target;
+          onChange={(e) => {
+            const { value } = e.target;
             setSize(value);
           }}></Textarea>
 
@@ -202,8 +202,8 @@ const AddItems = ({ setAuth }) => {
           name="file"
           id="file"
           accept="image/*"
-          onChange={(event) => {
-            const file = event.target.files;
+          onChange={(e) => {
+            const file = e.target.files;
             setFiles(file)
             // setFiles(URL.createObjectURL(event.target.files));
           }}></Textarea>

@@ -2,6 +2,7 @@ import { Facebook, Instagram, Twitter, Pinterest, Room, Phone, MailOutline } fro
 import styled from "styled-components"
 import { PaymentBanner } from "../data"
 
+
 const Container = styled.div`
     display: flex;
 
@@ -60,7 +61,7 @@ const List = styled.ul`
 `
 
 const ListItem = styled.li`
-font-size: 18px;
+    font-size: 18px;
     width: 50%;
     margin-bottom: 10px;
     cursor: pointer;

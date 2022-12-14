@@ -119,3 +119,12 @@
 }  
 
 /* end navbar page dedicated design */
+
+
+.homebtn{
+    font-weight: 500;
+    font-size:17px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 157px;
+}

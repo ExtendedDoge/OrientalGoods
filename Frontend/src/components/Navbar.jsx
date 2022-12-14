@@ -85,19 +85,19 @@ const Navbar = () => {
             <Left>
                 <Language>EN</Language>
                 <SearchContainer>
-                    <Input placeholder="Search" style={{color:"teal"}}/>
+                    <Input placeholder="Search Products" style={{color:"teal"}}/>
                     <Search style={{color:"black"}}/>
                 </SearchContainer>
             </Left>
-            <Center><Logo>Oriental-Goods.</Logo></Center>   
+            <Link to = "/"><Center><Logo>Oriental-Goods.</Logo></Center></Link>   
             <Right>
                 <Link to = "/register" className = "btn-register">REGISTER</Link>
                 <Link to ="/login" className = "btn-signin">LOG-IN</Link>
                 <Link to = "/profile" className= "btn-dashboard">ACCOUNT</Link>
                 <MenuItem>
-                <Badge badgeContent={4} color="primary">
+                <Link to ="/cartitems"><Badge badgeContent={4} color="primary">
                     <ShoppingCartOutlined />
-                </Badge>
+                </Badge></Link>
                 </MenuItem>
             </Right>
         </Wrapper>

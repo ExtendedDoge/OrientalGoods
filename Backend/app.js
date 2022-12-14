@@ -136,7 +136,7 @@ app.get('/verify', auth, async (req, res) => {
 //add image on database to be reused for displaying pages
 //first is for adding items for clothing category
 app.post(
-    `/itemsforsale`,
+    `/user/itemsforsale`,
     auth,
     upload.array("file", 2),
     async (request, response) => {
@@ -148,56 +148,57 @@ app.post(
             const { productname, manufacturer, description, price, color, size } = request.body;
 
             const userId = request.user.id;
-            const obj = JSON.parse(JSON.stringify(request.body))
 
-            console.log(request.body);
-            console.log(request.files);
+
+            // console.log(request.body);
+            // console.log(request.files);
 
             const addItemsForSale = await pool.query(
                 `INSERT INTO public.dbitems (productname, manufacturer, description, price, image3, color, size, id) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`,
                 [productname, manufacturer, description, price, image3, color, size, userId]
             );
             response.json(addItemsForSale.rows[0]);
-            console.log(obj)
         } catch (error) {
             console.log(error)
         }
-    })
+    });
 
 
 //view user added clothing listing
 app.get('/user/added-items', auth, async (request, response) => {
     try {
-        const apparelAdded = await pool.query(
-            "SELECT public.accountcreate.firstname, public.accountcreate.email, public.dbaddapparel.product_id, public.dbaddapparel.productname, public.dbaddapparel.manufacturer, public.dbaddapparel.description, public.dbaddapparel.price, public.dbaddapparel.image, public.dbaddapparel.size, public.dbaddapparel.quantity, public.dbaddapparel.color FROM public.accountcreate LEFT JOIN public.dbaddapparel ON public.accountcreate.id = public.dbaddapparel.id WHERE public.accountcreate.id = $1 ORDER BY public.dbaddapparel.product_id DESC",
+        const addedItemsToDB = await pool.query(
+            "SELECT public.accountcreate.username, public.accountcreate.email, public.dbitems.product_id, public.dbitems.productname, public.dbitems.manufacturer, public.dbitems.description, public.dbitems.price, public.dbitems.color, public.dbitems.size, public.dbitems.image3 FROM public.accountcreate LEFT JOIN public.dbitems ON public.accountcreate.id = public.dbitems.id WHERE public.accountcreate.id = $1 ORDER BY public.dbitems.product_id DESC",
             [request.accountcreate.id]
         );
 
-        response.json(apparelAdded.rows);
-        //consolose.log(user.rows)
+        response.json(addedItemsToDB.rows);
     } catch (error) {
         console.error(error.message)
     }
 })
 
 //get all clothing items added. to be used for categories section on react frontend(should be 3 pcs)
-app.get("/apparelsection", async (request, response) => {
+app.get("/all-items", async (request, response) => {
     try {
-        const apparelSection = await pool.query();
-        response.json(apparelSection.rows);
+        const allItemList = await pool.query(
+            "SELECT product_id, productname, manufacturer, description, price, color, size, image3 FROM public.dbitems ORDER BY public.dbitems.product_id DESC"
+        );
+        response.json(allItemList.rows);
     } catch (error) {
         console.log(error)
     }
 })
 
-app.get("/apparelsection:id", async (request, response) => {
+//single items
+app.get("/all-items/:id", async (request, response) => {
     try {
-        const apparel_id = request.params.id;
-        const apparellist = await pool.query(
-            "SELECT public.accountcreate.firstname, public.accountcreate.lastname, public.accountcreate.email, public.dbaddapparel.product_id, public.dbaddapparel.productname, public.dbaddapparel.manufacturer, public.dbaddapparel.description, public.dbaddapparel.price, public.dbaddapparel.image, public.dbaddapparel.size, public.dbaddapparel.quantity, public.dbaddapparel.color FROM public.accountcreate LEFT JOIN public.dbaddapparel ON public.accountcreate.id = public.dbaddapparel.id WHERE public.dbaddapparel.product_id = $1",
-            [apparel_id]
+        const individualItemsID = request.params.id;
+        const individualItems = await pool.query(
+            "SELECT public.accountcreate.firstname, public.accountcreate.lastname, public.accountcreate.username, public.accountcreate.email, public.dbitems.product_id, public.dbitems.productname, public.dbitems.manufacturer, public.dbitems.description, public.dbitems.price, public.dbitems.color, public.dbitems.size, public.dbitems.image3, FROM public.accountcreate LEFT JOIN public.dbitems ON public.accountcreate.id = public.dbitems.id WHERE public.dbitems.product_id = $1",
+            [individualItemsID]
         );
-        response.json(apparellist.rows)
+        response.json(individualItems.rows)
     } catch (error) {
         console.log(error)
     }

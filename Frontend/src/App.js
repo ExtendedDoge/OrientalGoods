@@ -9,7 +9,10 @@ import Additems from "./Additemsforsale/Additems"
 import Profile from "./Profile/Profile";
 import axios from "./api/axios";
 import BlingsList from "./pages/BlingsList"
-import Dashboard from "./Profile/Profile";
+import ClothingList from "./pages/ClothingList"
+import DelicacyList from "./pages/DelicacyList"
+import Products from "./components/Products"
+import Tiedyeshirt from "./pages/clothing/Tiedyeshirt"
 
 const VERIFY_URL = "/verify";
 
@@ -84,11 +87,19 @@ function App() {
             )
           } />
 
+
+
+
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/additems" element={<Additems />} />
-        <Route path="/profile" element={<Dashboard />} />
-
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/clothinglist" element={<ClothingList />} />
+        <Route path="/delicacylist" element={<DelicacyList />} />
+        <Route path="/blingslist" element={<BlingsList />} />
+        <Route path="/hotitems" element={<Products />} />
+        <Route path="/cartitems" element={<Cart />} />
+        <Route path="/tiedyeshirt" element={<Tiedyeshirt />} />
       </Routes>
     </BrowserRouter>
   )

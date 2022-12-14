@@ -71,7 +71,7 @@ const ButtonNav = styled.button`
     }
 `
 
-const Dashboard = ({ setAuth }) => {
+const Profile = ({ setAuth }) => {
   const [firstname, setFName] = useState("");
   const [lastname, setLName] = useState("");
   const [username, setUsername] = useState("");
@@ -139,4 +139,4 @@ const Dashboard = ({ setAuth }) => {
   )
 }
 
-export default Dashboard
+export default Profile
