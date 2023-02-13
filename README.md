@@ -20,7 +20,7 @@ To provide exceptional quality and affordable products for the people whilst hel
 
 ## Oriental Goods Webapplication Walkthrough
 
--https://drive.google.com/drive/folders/1ZC6r4csReJ2FbX85B_KPk8IHCvNfiX5s
+-https://drive.google.com/drive/folders/1ZC6r4csReJ2FbX85B_KPk8IHCvNfiX5s?usp=sharing
 
 ## Oriental Goods Entity Relationship Diagram
 
