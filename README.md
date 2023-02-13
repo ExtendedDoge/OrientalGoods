@@ -18,6 +18,14 @@ To provide exceptional quality and affordable products for the people whilst hel
 - [Postgres](https://www.postgresql.org/)
 - [node-postgres](https://node-postgres.com/)
 
+## Oriental Goods Webapplication Walkthrough
+
+-https://drive.google.com/drive/folders/1ZC6r4csReJ2FbX85B_KPk8IHCvNfiX5s
+
+## Oriental Goods Entity Relationship Diagram
+
+-https://drive.google.com/file/d/175lgQGxDf-l9csv0dQXVljmubq2byAjT/view?usp=share_link
+
 ## To run the project
 
 npm start
