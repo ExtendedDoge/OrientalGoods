@@ -16,9 +16,9 @@ const Container = styled.div`
 
 const ItemsContainer = styled.div`
     display: flex;
-`
+    `
  const List = styled.List`
-    
+    display: flex;
  `
 
 
@@ -29,6 +29,17 @@ const Allitemsview = () => {
     const [itemDescription, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [pesoSign, setPesoSign] = useState("");
+
+    const [itemsListing, setItemsListing] = useState([    {
+        "product_id": "34",
+        "productname": "Oppo Phone Reno 8",
+        "manufacturer": "Oppo",
+        "description": "Android 13",
+        "price": "21000.00",
+        "color": "None",
+        "size": "None",
+        "image3": "2023-02-08-18-36-32-162223834.PNG"
+    }]);
     // const [color, setColor] = useState("");
     // const [size, setSize] = useState("");
 
@@ -41,28 +52,23 @@ const Allitemsview = () => {
             });
 
             const parseRes = await response?.data;
+            console.log(parseRes)
 
-            const itemsListing = parseRes.map((item) => {
-                return new ItemsClass ({
-                    product_id: item.product_id,
-                    productname: item.productname,
-                    manufacturer: item.manufacturer,
-                    description: item.description,
-                    price: item.price,
-                    color: item.color,
-                    size: item.size,
-                    image3: `${image3}/$(item.image3)`
-                });
-            });
+            // const itemsListing = parseRes.map((item) => {
+            //     return new ItemsClass ({
+            //         product_id: item.product_id,
+            //         productname: item.productname,
+            //         manufacturer: item.manufacturer,
+            //         description: item.description,
+            //         price: item.price,
+            //         color: item.color,
+            //         size: item.size,
+            //         image3: `${image3}/$(item.image3)`
+            //     });
+            // });
 
             setitemsAdded(itemsAdded);
-            setProductname("Productname:");
-            setManufacturer("Manufacturer: ");
-            setDescription("Description:");
-            setPrice("Price:");
-            setColor("Color:");
-            setSize("Size:");
-        } catch {
+        } catch(error) {
             console.log(error);
             console.error(error.message)
         }

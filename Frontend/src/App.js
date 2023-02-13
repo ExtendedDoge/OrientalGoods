@@ -13,6 +13,7 @@ import ClothingList from "./pages/ClothingList"
 import DelicacyList from "./pages/DelicacyList"
 import Products from "./components/Products"
 import Tiedyeshirt from "./pages/clothing/Tiedyeshirt"
+import Allitemsview from "./Allitemsview/Allitemsview";
 
 const VERIFY_URL = "/verify";
 
@@ -100,6 +101,7 @@ function App() {
         <Route path="/hotitems" element={<Products />} />
         <Route path="/cartitems" element={<Cart />} />
         <Route path="/tiedyeshirt" element={<Tiedyeshirt />} />
+        <Route path="/allitemsview" element={<Allitemsview />} />
       </Routes>
     </BrowserRouter>
   )

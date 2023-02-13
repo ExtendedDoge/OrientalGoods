@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { Link } from 'react-router-dom'
 
 const Container = styled.div`
-    flex:1;
+    flex: 1;
     margin: 3.5px;
     height: 70vh;
     position: relative;
@@ -50,8 +50,8 @@ const CategoryItem = ({item}) => {
         <Image src={item.img}/>
         <Info>
             <Title>{item.title}</Title>
-            <Link to = "/clothinglist"><Button>SHOP NOW</Button></Link>
             <Link to = "/delicacylist"><Button>SHOP NOW</Button></Link>
+            <Link to = "/clothinglist"><Button>SHOP NOW</Button></Link>
             <Link to = "/blingslist"><Button>SHOP NOW</Button></Link>
         </Info>
     </Container>
