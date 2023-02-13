@@ -3,6 +3,7 @@ import { useState } from "react"
 import styled from "styled-components"
 import {sliderItems} from "../data"
 import { mobile } from "../responsive"
+import { Link } from "react-router-dom"
 
 const Container = styled.div`
     width: 100%;
@@ -70,6 +71,7 @@ const Button = styled.button`
     padding: 12px;
     font-size: 22px;
     background-color: transparent;
+    transition: all 0.5s ease;
     border: 4px solid;
     cursor: pointer;
     &:hover {
@@ -102,7 +104,7 @@ const Slider = () => {
                     <InfoContainer>
                         <Title>{item.title}</Title>
                         <Desc>{item.desc}</Desc>
-                        <Button>Learn More</Button> 
+                        <Link to="/hotitems"><Button>Learn More</Button></Link>
                     </InfoContainer>
                 </Slide>
             ))}

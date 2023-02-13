@@ -1,3 +1,4 @@
+//for slider items pictures
 export const sliderItems = [
     {
         id: 1,
@@ -22,16 +23,17 @@ export const sliderItems = [
     },
 ];
 
+//for categories section at homepage
 export const categories = [
     {
         id: 1,
         img: "testdeli.jpg",
-        title: "SWEETS AND TREATS",
+        title: "DELICACIES",
     },
     {
         id: 2,
         img: "filshirt.jpg",
-        title: "CLOTHING ATBP.",
+        title: "APPAREL",
     },
     {
         id: 3,
@@ -40,37 +42,251 @@ export const categories = [
     },
 ];
 
+//for homepage popular/bestsellingitems
 export const popularProducts = [
     {
         id: 1,
-        img: "product1.jpg",
+        img: "tiedyetshirt.jpg",
     },
     {
         id: 2,
-        img: "product2.jpg",
+        img: "bluefloralpolo.jpg",
     },
     {
         id: 3,
-        img: "product3.jpg",
+        img: "totebagtiedye.jpg",
     },
     {
         id: 4,
-        img: "product4.jpg",
+        img: "banigbag.jpg",
     },
     {
         id: 5,
-        img: "product5.jpg",
+        img: "beautyphilshirt.jpg",
     },
     {
         id: 6,
-        img: "item55.jpg",
+        img: "peanutbutter.jpg",
     },
     {
         id: 7,
-        img: "product7.jpg",
+        img: "bulad.jpg",
     },
     {
         id: 8,
-        img: "product8.jpg",
+        img: "philstrawhat.jpg",
+    },
+]
+
+//loginbanner
+export const LoginBanner = [
+    {
+        id: 1,
+        img: "loginbanner.jpg",
+    }
+]
+
+//registerationbanner
+export const RegisterBanner = [
+    {
+        id: 1,
+        img: "registerbanner.jpg",
+    }
+]
+
+export const PaymentBanner = [
+    {
+        id: 1,
+        img: "paymentbanner.png"
+    }
+]
+
+//categories for delicacy/foods
+export const DelicacyTreats = [
+    {
+        id: 1,
+        img: "budbuds.jpg",
+    },
+    {
+        id: 2,
+        img: "driedmango.jpg",
+    },
+    {
+        id: 3,
+        img: "bananachips.jpg",
+    },
+    {
+        id: 4,
+        img: "kape.jpg",
+    },
+    {
+        id: 5,
+        img: "hopia.jpg",
+    },
+    {
+        id: 6,
+        img: "peanutbutter.jpg",
+    },
+    {
+        id: 7,
+        img: "bulad.jpg",
+    },
+    {
+        id: 8,
+        img: "otap.jpg",
+    },
+]
+
+
+//category for clothing/apparel items
+export const ClothingSection = [
+    {
+        id: 1,
+        img: "tiedyetshirt.jpg",
+    },
+    {
+        id: 2,
+        img: "bluefloralpolo.jpg",
+    },
+    {
+        id: 3,
+        img: "embroideredpants.jpg",
+    },
+    {
+        id: 4,
+        img: "iluvedumashirt.jpg",
+    },
+    {
+        id: 5,
+        img: "beautyphilshirt.jpg",
+    },
+    {
+        id: 6,
+        img: "Tiedyepantsred.jpg",
+    },
+    {
+        id: 7,
+        img: "Tiedyeshorts.jpg",
+    },
+    {
+        id: 8,
+        img: "filshirt.jpg",
+    },
+]
+
+//category for blings and decor
+export const BlingDecors = [
+    {
+        id: 1,
+        img: "assortedpins.jpg",
+    },
+    {
+        id: 2,
+        img: "philstrawhat.jpg",
+    },
+    {
+        id: 3,
+        img: "neckearcombo.jpg",
+    },
+    {
+        id: 4,
+        img: "necklacetribal.jpg",
+    },
+    {
+        id: 5,
+        img: "braceletph.jpg",
+    },
+    {
+        id: 6,
+        img: "necklaceethnic.jpg",
+    },
+    {
+        id: 7,
+        img: "Tiedyeshorts.jpg",
+    },
+    {
+        id: 8,
+        img: "filshirt.jpg",
+    },
+]
+
+//individual items since nalilito ako i separate sila hahaha
+export const ClothingTest = [
+    {
+        id: 1,
+        img: "tiedyetshirt.jpg",
+    },
+]
+
+export const ClothingTest1 = [
+    {
+        id: 1,
+        img: "bluefloralpolo.jpg",
+    },
+]
+
+export const ClothingTest2 = [
+    {
+        id: 1,
+        img: "embroideredpants.jpg",
+    },
+]
+
+export const ClothingTest3 = [
+    {
+        id: 1,
+        img: "iluvedumashirt.jpg",
+    },
+]
+
+export const ClothingTest4 = [
+    {
+        id: 1,
+        img: "beautyphilshirt.jpg",
+    },
+]
+
+export const ClothingTest5 = [
+    {
+        id: 1,
+        img: "Tiedyepantsred.jpg",
+    },
+]
+
+export const ClothingTest6 = [
+    {
+        id: 1,
+        img: "Tiedyeshorts.jpg",
+    },
+]
+
+export const ClothingTest7 = [
+    {
+        id: 1,
+        img: "filshirt.jpg",
+    },
+]
+
+//individual items for delicacy
+export const DelicacyTreats1 = [
+    {
+        id: 1,
+        img: "budbuds.jpg",
+    },
+]
+
+export const DelicacyTreats2 = [
+    {
+        id: 1,
+        img: "driedmango.jpg",
+    },
+]
+
+
+//for decoration design
+export const Decoration1 = [
+    {
+        id: 1,
+        img: "assortedpins.jpg",
     },
 ]

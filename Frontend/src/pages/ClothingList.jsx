@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Navbar from "../components/Navbar"
 import Announcement from "../components/Announcement"
-import Products from "../components/Products"
+import ClothingCategory from "../components/ClothingCategory"
 import Newsletter from "../components/Newsletter"
 import Footer from "../components/Footer"
 
@@ -12,7 +12,6 @@ const Container = styled.div``
 const Title = styled.h1`
     margin: 20px;
 `
-
 
 
 const FilterContainer = styled.div`
@@ -44,7 +43,7 @@ const ProductList = () => {
     <Container>
         <Announcement/>
         <Navbar/>
-        <Title>Dresses</Title>
+        <Title>Clothing and Apparels</Title>
         <FilterContainer>
              <Filter>
                 <FilterText style={{marginRight:"15px"}}>Filter products by:</FilterText>
@@ -54,7 +53,7 @@ const ProductList = () => {
                 <Option>Black</Option>
                 <Option>Red</Option>
                 <Option>Blue</Option>
-                <Option>Yello</Option>
+                <Option>Yellow</Option>
                 <Option>Green</Option>
              </Select>
              <Select>
@@ -75,7 +74,7 @@ const ProductList = () => {
                 </Select>
              </Filter>
         </FilterContainer>
-        <Products/>
+        <ClothingCategory/>
         <Newsletter/>
         <Footer/>
     </Container>

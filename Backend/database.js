@@ -5,7 +5,7 @@ function connectDatabase() {
 
         user: 'postgres',
         password: '12345',
-        database: 'ecomm',
+        database: 'testing4',
         host: 'localhost',
         port: '5432'
     })

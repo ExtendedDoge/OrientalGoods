@@ -1,10 +1,71 @@
+/* start log-in page dedicated design */
+.label-username{
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+.label-password{
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+.login-forgotpw{
+    margin-top: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.login-forgotpw:hover {
+    color: teal; 
+}
+
+.login-register-direct{
+    margin-top: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-register-direct:hover {
+    color: teal; 
+}
+/* end log-in page dedicated design */
+
+/* start register page dedicated design */
+.btn-registerpage-login{
+    margin-left: 25px;
+    width: 25%;
+    border: none;
+    text-align: center;
+    padding: 5px 20px;
+    background-color: teal;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+.btn-registerpage-login:hover{
+    background-color: #420c39; 
+    transform: scale(1.1);
+}
+
+.privacyPol:hover{
+    color: teal; 
+    transition: all 0.5s ease;
+}
+/* end register page dedicated design */
+
+/* start navbar page dedicated design */
 .btn-register{
-    font-size:18px;
+    font-weight: 500;
+    font-size:17px;
     cursor: pointer;
     margin-left: 25px; 
     transition: all 0.5s ease;
     text-decoration: none;
-
 }
 .btn-register:hover {
     color: rgb(25, 143, 143); 
@@ -13,7 +74,8 @@
 }
 
 .btn-signin{
-    font-size:18px;
+    font-weight: 500;
+    font-size:17px;
     cursor: pointer;
     margin-left: 25px; 
     transition: all 0.5s ease;
@@ -26,32 +88,43 @@
     font-weight: 500;
 }    
 
-.btn-registerpage-login{
-    margin-left: 15px;
-    width: 25%;
-    border: none;
-    text-align: center;
-    padding: 15px 20px;
-    background-color: teal;
-    color: white;
-    font-size: 15px;
-    font-weight:500;
+.btn-dashboard{
+    font-weight: 500;
+    font-size:17px;
+    cursor: pointer;
+    margin-left: 25px; 
+    transition: all 0.5s ease;
+    text-decoration: none;
+}
+
+.btn-dashboard:hover {
+    color: teal; 
+    transform: scale(1.2);
+    font-weight: 500;
+}  
+
+.btn-logout{
+    font-weight: 500;
+    font-size:17px;
+    cursor: pointer;
+    margin-left: 20px; 
+    transition: all 0.5s ease;
+    text-decoration: none;
+}
+
+.btn-logout:hover {
+    color: teal; 
+    transform: scale(1.2);
+    font-weight: 500;
+}  
+
+/* end navbar page dedicated design */
+
+
+.homebtn{
+    font-weight: 500;
+    font-size:17px;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.5s ease;
-}
-
-.btn-registerpage-login:hover{
-    background-color: #c08ab7; 
-    transform: scale(1.1);
-}
-
-.label-username{
-    margin-top: 15px;
-    font-size: 22px;
-}
-
-.label-password{
-    margin-top: 15px;
-    font-size: 22px;
+    margin-right: 157px;
 }

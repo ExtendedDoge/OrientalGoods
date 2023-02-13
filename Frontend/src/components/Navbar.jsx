@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { mobile } from "../responsive";
 import { Link } from 'react-router-dom'
 import "../assets/css/styles.css"
+import {NavDropdown} from "react-bootstrap"
 
 //styled components start
 const Container = styled.div`
@@ -24,7 +25,9 @@ const Left = styled.div`
     align-items: center;
 `
 const Language = styled.span`
-    font-size: 14px;
+color: teal;
+font-weight: 600;
+    font-size: 16px;
     cursor: pointer;
     ${mobile({ display: "none" })}
 `;
@@ -36,6 +39,8 @@ const SearchContainer = styled.div`
     padding: 5px;
 `
 const Input = styled.input`
+font-weight: 600;
+    font-size: 16px;
     border: none;
     ${mobile({ width: "50px" })}
 `;
@@ -46,13 +51,14 @@ const Logo = styled.h1`
     cursor: pointer;
     transition: all 0.5s ease;
     &:hover {
-    color: black; 
     transform: scale(1.2);
     }
 `
-const Center = styled.div`
+const Center = styled.button`
     flex: 1;
     text-align: center;
+    border: none;
+    background-color: transparent;
 `
 const Right = styled.div`
     flex: 1;
@@ -72,7 +78,6 @@ const MenuItem = styled.div`
     ${mobile({ fontSize: "12px", marginLeft: "10px" })}
     }
 `
-
 const Navbar = () => {
   return (
     <Container>
@@ -80,22 +85,23 @@ const Navbar = () => {
             <Left>
                 <Language>EN</Language>
                 <SearchContainer>
-                    <Input placeholder="Search"/>
-                    <Search style={{color:"black", fontSize:20}}/>
+                    <Input placeholder="Search Products" style={{color:"teal"}}/>
+                    <Search style={{color:"black"}}/>
                 </SearchContainer>
             </Left>
-            <Center><Logo>Oriental-Goods.</Logo></Center>   
+            <Link to = "/"><Center><Logo>Oriental-Goods.</Logo></Center></Link>   
             <Right>
-                <Link to = "/register" className = "btn-register"> REGISTER </Link>
-                <Link to ="/login" className = "btn-signin"> SIGN IN </Link>
+                <Link to = "/register" className = "btn-register">REGISTER</Link>
+                <Link to ="/login" className = "btn-signin">LOG-IN</Link>
+                <Link to = "/profile" className= "btn-dashboard">ACCOUNT</Link>
                 <MenuItem>
-                <Badge badgeContent={4} color="primary">
+                <Link to ="/cartitems"><Badge badgeContent={4} color="primary">
                     <ShoppingCartOutlined />
-                </Badge>
+                </Badge></Link>
                 </MenuItem>
             </Right>
         </Wrapper>
-    </Container>
+    </Container> 
   )
 }
 
